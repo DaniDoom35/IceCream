@@ -1,0 +1,243 @@
+@font-face {
+    font-family: 'Rakoon';
+    src: url('../FONTS/Rakoon_PersonalUse.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    background-color: #731E5F;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.contenedor-logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    width: 150px;
+}
+
+.contenedor-navegacion {
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2rem;
+}
+
+.seccion-principal {
+    background-image: url('../IMG/back.png'); /* Cambia por tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.contenido-principal {
+    background-color: rgba(0, 0, 0, 0.); /* Capa oscura para leer mejor el texto */
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.marca {
+    font-size: 10rem;
+    font-weight: bold;
+    font-family: 'Railway', sans-serif;
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    font-size: 1.2rem;
+    font-family: 'Railway', sans-serif;
+}
+
+.seccion-beneficios {
+    background-color: #fef5e7;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contenido-beneficios {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+}
+
+.titulo-beneficio {
+    font-family: 'Chewy', cursive;
+    font-size: 7rem;
+    color: #d35400;
+    margin-bottom: 20px;
+}
+
+.texto-beneficio {
+    font-size: 2.3rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.seccion-valores {
+    background-image: url('../IMG/fondo.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 40px;
+    overflow: hidden;
+}
+
+.overlay-valores {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.contenedor-valores {
+    max-width: 50%;
+    z-index: 1;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-align: right;
+    padding-left: 10px;
+    margin-right: 140px;
+}
+
+.valor {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+
+.imagen-izquierda {
+    width: 15%;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 20px;
+    margin-left: 500px;
+}
+
+.footer {
+    background-color: #731E5F;
+    color: white;
+    padding: 40px 20px 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info, .footer-redes {
+    flex: 1 1 300px;
+    margin-bottom: 20px;
+}
+
+.footer-info h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer-redes a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-redes a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+
+.quienes-somos {
+    padding: 80px 40px;
+    background-color: #fef5e7;
+    font-family: 'Raleway', sans-serif;
+}
+
+.contenedor-quienes {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.quienes-imagen img {
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.quienes-texto {
+    max-width: 600px;
+}
+
+.quienes-texto h2 {
+    font-size: 4rem;
+    color: #d35400;
+    font-family: 'Chewy', cursive;
+    margin-bottom: 20px;
+}
+
+.quienes-texto p {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+
+
