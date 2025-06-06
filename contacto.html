@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>¿Quiénes somos? | Soft Ice Cream</title>
+  <title>Contacto - Soft Ice Cream</title>
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,39 +27,30 @@
   <div id="menu-container"></div>
 </header>
 
-<section class="quienes-somos">
-  <div class="contenedor-quienes">
-    <div class="quienes-imagen">
-      <img src="img/hombre.png" alt="Nuestro equipo de trabajo" />
-    </div>
-    <div class="quienes-texto">
-      <h2>¿Quiénes somos?</h2>
-      <p>
-        Somos una empresa mexicana apasionada por el sabor, la alegría y las oportunidades de negocio. Nacimos con una misión: ofrecer un modelo accesible y rentable para emprender vendiendo deliciosos conos suaves.
-      </p>
-      <p>
-        En Soft Ice Cream, creemos que todos merecen una oportunidad para crecer. Nuestro equipo está conformado por expertos en maquinaria, marketing y servicio al cliente, listos para apoyarte en tu camino emprendedor.
-      </p>
-      <p>
-        Más que una marca de helado, somos una familia. ¡Únete a nosotros y sé parte de esta dulce historia!
-      </p>
-    </div>
-  </div>
-</section>
+<main class="seccion-principal">
+  <h1>Contacto</h1>
+
+  <section class="contacto-formulario" style="max-width: 600px; margin: 40px auto; padding: 0 20px;">
+    <form action="procesar_formulario.php" method="POST">
+      <label for="nombre">Nombre completo:</label><br />
+      <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 10px; margin-bottom: 20px;" />
+
+      <label for="email">Correo electrónico:</label><br />
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 20px;" />
+
+      <label for="mensaje">Mensaje:</label><br />
+      <textarea id="mensaje" name="mensaje" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 20px;"></textarea>
+
+      <button type="submit" style="padding: 12px 25px; background-color: #731E5F; color: white; border: none; cursor: pointer; font-size: 1.1rem;">
+        Enviar
+      </button>
+    </form>
+  </section>
+</main>
 
 <footer class="footer">
-  <div class="footer-contenido">
-    <div class="footer-info">
-      <h3>Soft Ice Cream</h3>
-      <p>Email: contacto@softicecream.com</p>
-      <p>Ubicación: Ciudad de México, México</p>
-    </div>
-    <div class="footer-redes">
-      <p>Síguenos:</p>
-      <a href="#" target="_blank">Facebook</a> |
-      <a href="#" target="_blank">Instagram</a> |
-      <a href="#" target="_blank">TikTok</a>
-    </div>
+  <div class="footer-copy">
+    <p>&copy; 2025 Soft Ice Cream. Todos los derechos reservados.</p>
   </div>
 </footer>
 
