@@ -5,70 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contacto - Soft Ice Cream</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<header>
-  <div class="contenedor-logo">
-    <div class="logo">
-      <img src="img/logo.png" alt="Logo de Soft Ice Cream" class="logo-img" />
+  <header>
+    <div class="contenedor-logo">
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo de Soft Ice Cream" class="logo-img" />
+      </div>
     </div>
-  </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div id="menu-container"></div>
+  </header>
 
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <main class="seccion-principal" style="min-height: 100vh;">
+    <div class="contenido-principal" style="width: 100%; max-width: 700px;">
+      <h1 style="font-family: 'Chewy', cursive; font-size: 4rem; margin-bottom: 20px;">Contáctanos</h1>
+      <p style="font-size: 1.4rem; margin-bottom: 40px;">¿Tienes alguna pregunta o comentario? ¡Estamos para ayudarte!</p>
+      
+<form id="contact-form" action="https://formsubmit.co/chargerpod@gmail.com" method="POST">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required />
+  
+  <label for="email">Correo:</label>
+  <input type="email" id="email" name="email" required />
+  
+  <label for="mensaje">Mensaje:</label>
+  <textarea id="mensaje" name="mensaje" required></textarea>
+  
+  <button type="submit">Enviar</button>
+</form>
 
-  <!-- Contenedor para menú externo -->
-  <div id="menu-container"></div>
-</header>
+<div id="form-message" style="margin-top: 1rem; font-weight: bold;"></div>
 
-<main class="seccion-principal">
-  <h1>Contacto</h1>
+  </main>
 
-  <section class="contacto-formulario" style="max-width: 600px; margin: 40px auto; padding: 0 20px;">
-    <form action="procesar_formulario.php" method="POST">
-      <label for="nombre">Nombre completo:</label><br />
-      <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 10px; margin-bottom: 20px;" />
+  <footer class="footer">
+    <div class="footer-copy">
+      <p>&copy; 2025 Soft Ice Cream. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-      <label for="email">Correo electrónico:</label><br />
-      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 20px;" />
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('menu.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('menu-container').innerHTML = data;
+        })
+        .catch(err => console.error('Error cargando el menú:', err));
+    });
 
-      <label for="mensaje">Mensaje:</label><br />
-      <textarea id="mensaje" name="mensaje" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 20px;"></textarea>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      if (menu) menu.classList.toggle('active');
+    }
 
-      <button type="submit" style="padding: 12px 25px; background-color: #731E5F; color: white; border: none; cursor: pointer; font-size: 1.1rem;">
-        Enviar
-      </button>
-    </form>
-  </section>
-</main>
+      const form = document.getElementById('contact-form');
+  const messageDiv = document.getElementById('form-message');
 
-<footer class="footer">
-  <div class="footer-copy">
-    <p>&copy; 2025 Soft Ice Cream. Todos los derechos reservados.</p>
-  </div>
-</footer>
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Evitar recarga
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('menu-container').innerHTML = data;
-      })
-      .catch(err => console.error('Error cargando el menú:', err));
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        messageDiv.style.color = 'green';
+        messageDiv.textContent = '¡Correo enviado con éxito! Gracias por contactarnos.';
+        form.reset(); // Limpiar formulario
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          messageDiv.style.color = 'red';
+          messageDiv.textContent = data.errors.map(error => error.message).join(', ');
+        } else {
+          throw new Error('Error desconocido al enviar.');
+        }
+      }
+    } catch (error) {
+      messageDiv.style.color = 'red';
+      messageDiv.textContent = 'Error enviando el correo. Intenta más tarde.';
+      console.error(error);
+    }
   });
+  </script>
 
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    if (menu) menu.classList.toggle('active');
-  }
-</script>
+<a href="https://wa.me/524426362084?text=Hola%20quiero%20más%20información" class="whatsapp-float" target="_blank" aria-label="Chatea con nosotros en WhatsApp">
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
+
 
 </body>
 </html>

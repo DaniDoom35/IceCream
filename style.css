@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
+@font-face {
+    font-family: 'Rakoon';
+    src: url('../FONTS/Rakoon_PersonalUse.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Contenedor del menú - centrar contenido */
+#menu-container {
+    text-align: center; /* Esto centra el ul.menu */
+}
+
+/* Menú */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block; /* Hace que el UL tome solo lo necesario y permita centrar con text-align center del padre */
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 15px; /* Espacio entre los items */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2rem;
+}
+
+/* Header */
+header {
+    background-color: #731E5F;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+
+.contenedor-logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    width: 150px;
+}
+
+.contenedor-navegacion {
+    text-align: center;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    color: white;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+/* Sección Principal */
+.seccion-principal {
+    background-image: url('../IMG/imagen5.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.contenido-principal {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.marca {
+    font-size: 10rem;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    font-size: 1.8rem;
+}
+
+/* Beneficios */
+.seccion-beneficios {
+    background-color: #fef5e7;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contenido-beneficios {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.titulo-beneficio {
+    font-family: 'Chewy', cursive;
+    font-size: 5rem;
+    color: #d35400;
+    margin-bottom: 20px;
+}
+
+.texto-beneficio {
+    font-size: 2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Sección Valores */
+.seccion-valores {
+    display: flex;
+    justify-content: space-between; /* Imagen a la izquierda, valores a la derecha */
+    align-items: center; /* Centrado vertical */
+    padding: 0 40px; /* Espacio a ambos lados para que no estén pegados */
+    min-height: 100vh;
+    position: relative;
+    background-image: url('../IMG/fondo.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.overlay-valores {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.contenedor-valores {
+    max-width: 50%;
+    z-index: 1;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-align: right;
+    padding-left: 10px;
+    margin-right: 40px; /* Separación del borde derecho */
+}
+
+.valor {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.imagen-izquierda {
+    width: 15%; /* Tamaño cómodo */
+    margin: 20px auto;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-left: 300px; /* Separación del borde izquierdo */
+    z-index: 1;
+}
+
+/* Footer */
+.footer {
+    background-color: #731E5F;
+    color: white;
+    padding: 40px 20px 20px;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info, .footer-redes {
+    flex: 1 1 300px;
+    margin-bottom: 20px;
+}
+
+.footer-info h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer-redes a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-redes a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+/* ¿Quiénes Somos? */
+.quienes-somos {
+    padding: 80px 40px;
+    background-color: #fef5e7;
+}
+
+.contenedor-quienes {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.quienes-imagen img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.quienes-texto {
+    max-width: 600px;
+}
+
+.quienes-texto h2 {
+    font-size: 4rem;
+    color: #d35400;
+    font-family: 'Chewy', cursive;
+    margin-bottom: 20px;
+}
+
+.quienes-texto p {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .marca {
+        font-size: 6rem;
+    }
+
+    .titulo-beneficio {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Botón hamburguesa visible */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Contenedor navegación relativo para posicionar menú desplegable */
+    .contenedor-navegacion {
+        position: relative;
+        text-align: left; /* para menú desplegado móvil */
+    }
+
+    /* Menú oculto por defecto */
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #731E5F;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: calc(100% - 40px);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 1000;
+    }
+
+    /* Menú visible cuando activo */
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        display: block;
+    }
+
+    .menu li a {
+        font-size: 1.5rem;
+    }
+
+    .marca {
+        font-size: 4rem;
+    }
+
+    .descripcion {
+        font-size: 1.2rem;
+    }
+
+    .seccion-valores {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        height: auto;
+        text-align: center;
+    }
+
+    .contenedor-valores {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .valor {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .imagen-izquierda {
+        width: 60%;
+        margin: 20px auto; /* Centrar imagen horizontalmente */
+        margin-left: 0; /* quitar margen izquierdo */
+    }
+
+    .overlay-valores {
+        display: none;
+    }
+
+    .footer-contenido {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info, .footer-redes {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .valor {
+        font-size: 2rem;
+    }
+
+    .imagen-izquierda {
+        width: 80%;
+    }
+
+    .titulo-beneficio {
+        font-size: 3rem;
+    }
+
+    .texto-beneficio {
+        font-size: 1.5rem;
+    }
+
+    .quienes-texto h2 {
+        font-size: 3rem;
+    }
+
+    .quienes-texto p {
+        font-size: 1.2rem;
+    }
+}
+
+.galeria-encabezado {
+      background-image: url('../img/back.png'); /* Ajusta el nombre del fondo */
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+
+.galeria-encabezado h1 {
+      font-size: 4rem;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+.galeria-carrusel {
+  background-color: #fef5e7;
+  padding: 30px 10px;
+  text-align: center;
+}
+
+.carrusel {
+  position: relative;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 300px;
+}
+
+.carrusel-imagenes {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.carrusel-imagenes img {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 15px;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer; /* Indica que se puede clickear */
+}
+
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #731E5F;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+.carrusel-btn.prev {
+  left: 8px;
+}
+
+.carrusel-btn.next {
+  right: 8px;
+}
+
+/* Modal */
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-contenido {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 15px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carrusel {
+    max-width: 100%;
+    height: 220px;
+  }
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-icon {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}

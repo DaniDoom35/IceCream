@@ -5,68 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Galería - Soft Ice Cream</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Chewy&family=Fredoka:wght@300..700&display=swap" rel="stylesheet" />
+
 </head>
 <body>
 
 <header>
-  <div class="contenedor-logo">
-    <div class="logo">
-      <img src="img/logo.png" alt="Logo de Soft Ice Cream" class="logo-img" />
-    </div>
+  <div class="contenedor-logo" style="text-align: center; margin: 20px 0;">
+    <img src="img/logo.png" alt="Logo de Soft Ice Cream" class="logo-img" style="width: 120px;" />
   </div>
-
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-  <!-- Contenedor para menú externo -->
   <div id="menu-container"></div>
 </header>
 
-<main class="seccion-principal">
-  <h1>Galería de Productos</h1>
+<main>
 
-  <!-- Carrusel deslizable -->
+  <!-- Encabezado con fondo -->
+  <section class="galeria-encabezado">
+   <h1>Galería de Productos</h1>
+<p class="galeria-subtitulo">Descubre la dulzura en cada presentación. ¡Inspírate con nuestros deliciosos diseños!</p>
+
+  </section>
+
+  <!-- Carrusel -->
   <section class="galeria-carrusel">
     <div class="carrusel">
       <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">❮</button>
       <div class="carrusel-imagenes" id="carruselImagenes">
-        <img src="img/producto1.jpg" alt="Producto 1" />
-        <img src="img/producto2.jpg" alt="Producto 2" />
-        <img src="img/producto3.jpg" alt="Producto 3" />
-        <img src="img/producto4.jpg" alt="Producto 4" />
+        <img src="img/imagen1.jpg" alt="imagen 1" />
+        <img src="img/imagen2.jpg" alt="imagen 2" />
+        <img src="img/imagen3.jpg" alt="imagen 3" />
+        <img src="img/imagen4.jpg" alt="imagen 4" />
       </div>
       <button class="carrusel-btn next" onclick="moverCarrusel(1)">❯</button>
     </div>
   </section>
 
-  <!-- Galería en cuadrícula -->
-  <section class="galeria-cuadricula">
-    <div class="grid-galeria">
-      <img src="img/producto5.jpg" alt="Producto 5" />
-      <img src="img/producto6.jpg" alt="Producto 6" />
-      <img src="img/producto7.jpg" alt="Producto 7" />
-      <img src="img/producto8.jpg" alt="Producto 8" />
-      <img src="img/producto9.jpg" alt="Producto 9" />
-      <img src="img/producto10.jpg" alt="Producto 10" />
-    </div>
-  </section>
+
 </main>
 
-
-<footer class="footer">
-  <div class="footer-copy">
-    <p>&copy; 2025 Soft Ice Cream. Todos los derechos reservados.</p>
-  </div>
+<footer class="footer" style="background-color:#731E5F; color:white; text-align:center; padding:20px;">
+  <p>&copy; 2025 Soft Ice Cream. Todos los derechos reservados.</p>
 </footer>
 
 <script>
-     let indice = 0;
-
+  let indice = 0;
   function moverCarrusel(direccion) {
     const carrusel = document.getElementById('carruselImagenes');
     const total = carrusel.children.length;
@@ -74,6 +59,7 @@
     const ancho = carrusel.children[0].clientWidth;
     carrusel.style.transform = `translateX(-${indice * ancho}px)`;
   }
+
   document.addEventListener('DOMContentLoaded', () => {
     fetch('menu.html')
       .then(response => response.text())
